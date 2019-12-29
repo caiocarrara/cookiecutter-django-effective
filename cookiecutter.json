@@ -1,0 +1,8 @@
+{
+  "project_name": "My Django Effective Project",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+  "description": "Behold My Django Effective Project!",
+  "author_name": "Caio Carrara",
+  "company_name": "{{ cookiecutter.author_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim()}}",
+  "company_slug": "{{ cookiecutter.company_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}"
+}

@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  web:
+    image: {{cookiecutter.company_slug}}/{{cookiecutter.project_slug}}
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: python {{cookiecutter.project_slug}}/manage.py runserver 0.0.0.0:${PORT}
+    labels:
+      com.{{cookiecutter.company_slug}}.project: {{cookiecutter.project_slug}}
+    env_file: .env
+    volumes:
+      - .:/app:z
+    depends_on:
+      - db
+    ports:
+      - "${PORT}:${PORT}"
+
+  db:
+    image: "postgres:12-alpine"
+    labels:
+      com.{{cookiecutter.company_slug}}.project: {{cookiecutter.project_slug}}
+    env_file: .env
+    volumes:
+      -  postgresql_data:/var/lib/postgresql/data
+    hostname: postgres
+    environment:
+      - POSTGRES_DB={{cookiecutter.project_slug}}
+      - POSTGRES_USER=postgres
+    ports:
+      - "${DATABASE_EXTERNAL_PORT}:5432"
+
+volumes:
+  postgresql_data:

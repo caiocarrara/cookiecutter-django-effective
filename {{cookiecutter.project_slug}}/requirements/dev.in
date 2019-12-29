@@ -1,0 +1,7 @@
+black
+flake8
+ipdb
+mixer
+pytest
+pytest-cov
+pytest-django

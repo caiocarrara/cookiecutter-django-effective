@@ -1,0 +1,9 @@
+[tool.black]
+line-length = 100
+target-version = ['py38']
+exclude = '''
+/(
+  \.venv
+| migrations
+)/
+'''
