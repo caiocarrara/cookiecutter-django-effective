@@ -27,10 +27,10 @@ install-dev:
 lint: ${VIRTUAL_ENV}/scripts/black
 	black --check tigger_api
 
-lock:
+lock: pip-tools
 	CUSTOM_COMPILE_COMMAND="make lock" pip-compile --generate-hashes --output-file requirements.txt requirements/base.in requirements/deploy.in
 
-lock-dev:
+lock-dev: pip-tools
 	CUSTOM_COMPILE_COMMAND="make lock-dev" pip-compile --generate-hashes --output-file requirements-dev.txt requirements/dev.in
 
 migrate: check_rebuil	d
