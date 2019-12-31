@@ -44,10 +44,13 @@ pip-tools: ${VIRTUAL_ENV}/scripts/pip-sync
 run: check_rebuild
 	docker-compose up
 
+setup: lock build
+
 start-%:
 	@docker-compose up -d $(@:start-%=%)
 
-setup: lock build
+stop:
+	@docker-compose stop
 
 test: clean check_rebuild
 	./scripts/run.sh pytest {{cookiecutter.project_slug}}
