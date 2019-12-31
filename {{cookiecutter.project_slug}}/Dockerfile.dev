@@ -4,4 +4,4 @@ USER root
 
 RUN make install-dev
 
-USER runsuer
+USER runuser
