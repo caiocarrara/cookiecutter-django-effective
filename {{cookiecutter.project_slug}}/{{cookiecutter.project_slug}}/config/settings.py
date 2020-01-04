@@ -58,9 +58,7 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
@@ -86,9 +84,7 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "formatters": {
-        "default": {
-            "format": "%(asctime)s %(levelname)s %(name)s:%(lineno)s %(message)s"
-        },
+        "default": {"format": "%(asctime)s %(levelname)s %(name)s:%(lineno)s %(message)s"},
     },
     "handlers": {"console": {"class": "logging.StreamHandler", "formatter": "default"}},
     "loggers": {
