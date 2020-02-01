@@ -46,3 +46,16 @@ $ cookiecutter https://github.com/cacarrara/cookiecutter-django-effective
 ```
 
 The new project directory should be created now.
+
+On project directory just created run:
+
+```sh
+$ make lock lock-dev
+```
+
+Now it's possible to install the dependencies with install or
+install-dev actions:
+
+```sh
+$ make install install-dev
+```
