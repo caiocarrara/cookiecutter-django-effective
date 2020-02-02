@@ -15,8 +15,8 @@ createsuperuser: check_rebuild
 	./scripts/run.sh python {{cookiecutter.project_slug}}/manage.py createsuperuser
 
 format: ${VIRTUAL_ENV}/scripts/black ${VIRTUAL_ENV}/scripts/isort
-	isort -rc --atomic tigger_api
-	black tigger_api
+	isort -rc --atomic {{cookiecutter.project_slug}}
+	black {{cookiecutter.project_slug}}
 
 install:
 	pip install -r requirements.txt
@@ -25,7 +25,7 @@ install-dev:
 	pip install -r requirements-dev.txt
 
 lint: ${VIRTUAL_ENV}/scripts/black
-	black --check tigger_api
+	black --check {{cookiecutter.project_slug}}
 
 lock: pip-tools
 	CUSTOM_COMPILE_COMMAND="make lock" pip-compile --generate-hashes --output-file requirements.txt requirements/base.in requirements/deploy.in
