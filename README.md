@@ -42,7 +42,7 @@ $ pip install cookiecutter
 - Navigate to where you want the new project directory be created and run cookiecutter against this repository
 
 ```sh
-$ cookiecutter https://github.com/cacarrara/cookiecutter-django-effective
+$ cookiecutter https://github.com/caiocarrara/cookiecutter-django-effective
 ```
 
 The new project directory should be created now.
